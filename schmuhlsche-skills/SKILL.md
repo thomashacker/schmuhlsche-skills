@@ -1,5 +1,5 @@
 ---
-name: hardware-projekt
+name: schmuhlsche-skills
 description: Vorgehen für Maker- und Hardware-Projekte mit 3D-Druck, parametrischem CAD (build123d), Elektronik (Raspberry Pi Pico, Sensoren, Netzteile, Wago) und Einkauf. Verwenden, sobald ein neues Gerät, Gehäuse, eine Halterung, ein Messgerät oder Ähnliches geplant, konstruiert, bestellt, gedruckt oder verkabelt wird, und bei jeder Rückschau nach einem solchen Projekt.
 ---
 
