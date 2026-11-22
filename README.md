@@ -16,4 +16,4 @@ New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\schmuhlsche-s
 
 ## Pflege
 
-Nach jedem Projekt eine Rückschau nach [schmuhlsche-skills/rueckschau.md](schmuhlsche-skills/rueckschau.md).
+Nach jedem Projekt eine Rückschau nach [schmuhlsche-skills/rueckschau.md](schmuhlsche-skills/rueckschau.md). Nach größeren Änderungen die Szenarien in [evals.md](evals.md) in einer frischen Sitzung durchspielen.

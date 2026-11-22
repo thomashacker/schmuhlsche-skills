@@ -60,11 +60,41 @@ Herkunft in Klammern.
 
 ## Elektrik
 
+- **Eine Ader pro Klemmen-Einlass.** Elko-Bein und Kabel steckten zusammen in einem Wago-Einlass;
+  das hält nicht sicher. Regel: Jede Ader bekommt ihren eigenen Einlass, notfalls die 5er-Wago.
+  (DragonFist)
+- **Offene Klemmen schützen.** Die fertige Netzteil-Verbindung lag offen im Kabelweg. Regel: Für
+  jede Wago-Verbindung eine kleine, verschraubte Druckdose mit Zugentlastung einplanen. (DragonFist)
+- **Vor dem Anschließen messen.** Multimeter auf Gleichspannung, rot an +, schwarz an −: positive
+  5 V heißen richtige Polung. Erst dann Verbraucher anstecken. (DragonFist)
+
 - **Breadboards brauchen eine gemeinsame Masse.** Linie B lief nicht, bis GND zwischen beiden
   Breadboards verbunden war. Regel: Jede Teilschaltung bekommt GND zur gemeinsamen Schiene, auch
   wenn sie eigenen Strom hat. (DragonFist)
 - **Wackelkontakte zuerst verdächtigen.** Ein Sensor zeigte dauerhaft Signal; nach Umstecken lief
   er. Regel: Bei Einzelausfällen erst Stecker prüfen, dann Code. (DragonFist)
+
+## Software
+
+- **Gefühl „zählt falsch“ war richtig.** 99 statt 93 Schläge, weil ein Schlag durch zwei
+  benachbarte hintere Strahlen in zwei Fäuste zerfiel. Regel: Rohdaten nachspielen, gegen eine
+  unabhängige Zählung beziffern, den Lauf als Regressionstest speichern. (DragonFist)
+- **82 km/h waren ein Messfehler.** Der Arm rutschte in der vorderen Ebene einen Strahl zur
+  Seite; das galt als neuer Schlagbeginn kurz vor der hinteren Ebene. Regel: Plausibilitätsgrenze
+  für jede Messgröße, im Zweifel ohne Wert zählen. (DragonFist)
+- **Ein fehlender Wert ließ die App abstürzen.** Nach der Einführung von „Treffer ohne Tempo“
+  rechnete das Run-Log noch mit der Zahl. Regel: Bei optionalen Feldern alle Verbraucher suchen
+  (`grep`) und abfangen, ein Test pro Verbraucher. (DragonFist)
+- **`readline()` mit Timeout liefert halbe Zeilen.** Regel: seriellen Eingang puffern, bis die
+  Zeile komplett ist. (DragonFist)
+- **Highscores können bei Stromausfall verloren gehen.** Regel: dauerhafte Dateien atomar
+  schreiben (`.tmp` + `os.replace`). (DragonFist)
+- **Zu grobe Korrektur.** Eine erste Regel gegen falsche Tempi hätte 40 % aller Messwerte
+  gelöscht. Regel: Jede Regel gegen alle echten Läufe mit „Anteil mit Messwert“ und Median
+  vergleichen, dann eingrenzen. (DragonFist)
+- **Testsuite doppelt so schnell durch einen Fund.** Der skalierende Renderer kostete unter dem
+  Dummy-Treiber 0,5 s pro Test. Regel: `--durations` ansehen, bevor Tests gestrichen werden.
+  (DragonFist)
 
 ## Zusammenarbeit
 

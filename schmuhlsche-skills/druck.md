@@ -3,8 +3,9 @@
 ## Drucker
 
 - Bauraum 256 × 256 × 256 mm. Größere Teile teilen (Schwalbenschwanz, verkleben).
-- Kein AMS: Farbwechsel per Pause. Die Pause greift **vor** der gewählten Schicht; für eine
-  Gravur von 0,8 mm Tiefe also bei 1,0 mm pausieren.
+- Kein AMS: Farbwechsel per Pause. Die Höhe am Schieberegler ist die **Oberkante** der Schicht, die
+  Pause greift vor ihr. Pausenhöhe = Wechselhöhe + eine Schicht: Gravur 0,8 mm → 1,0 mm, Schrift auf
+  2-mm-Boden → 2,2 mm. Vor dem Druck in der Vorschau prüfen, welche Schicht die erste neue Farbe ist.
 - Textured PEI Plate. Rechner kann aus, sobald der Druck gestartet ist.
 - Zeitraffer erzwingt eine Pause pro Schicht und die Kamera ist schwach: für Produktion aus.
 

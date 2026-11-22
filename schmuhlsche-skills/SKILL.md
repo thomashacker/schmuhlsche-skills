@@ -1,6 +1,6 @@
 ---
 name: schmuhlsche-skills
-description: Vorgehen für Maker- und Hardware-Projekte mit 3D-Druck, parametrischem CAD (build123d), Elektronik (Raspberry Pi Pico, Sensoren, Netzteile, Wago) und Einkauf. Verwenden, sobald ein neues Gerät, Gehäuse, eine Halterung, ein Messgerät oder Ähnliches geplant, konstruiert, bestellt, gedruckt oder verkabelt wird, und bei jeder Rückschau nach einem solchen Projekt.
+description: Vorgehen für Maker- und Hardware-Projekte mit 3D-Druck, parametrischem CAD (build123d), Elektronik (Raspberry Pi Pico, Sensoren, LEDs, Netzteile, Wago), Einkauf und der Software dazu (Firmware, pygame-App, Sensor-Logik, Logs, Tests, Releases auf Jetson oder Raspberry Pi). Verwenden, sobald ein Gerät, Gehäuse, eine Halterung oder ein Messgerät geplant, konstruiert, bestellt, gedruckt, verkabelt oder programmiert wird, wenn Messwerte eines selbstgebauten Geräts falsch wirken, bei einem Code-Audit und bei jeder Rückschau nach einem solchen Projekt.
 ---
 
 # Hardware-Projekte nach Schmuhl-Art
@@ -14,6 +14,7 @@ Lies je nach Phase zusätzlich:
 - `druck.md` – FDM-Konstruktion und Bambu-A1-Praxis.
 - `elektrik.md` – Strom, Masse, Klemmen, Verkabelungs-Anleitungen.
 - `stil.md` – Look und Flair (Farben, Gravur, Schriften, Oberflächen).
+- `software.md` – Logs, Replay, Sensor-Logik, Tests, Code-Audit, Release aufs Gerät.
 - `rueckschau.md` – wie Lehren am Projektende in diesen Skill zurückfließen.
 
 ## Grundsätze
@@ -36,6 +37,9 @@ Lies je nach Phase zusätzlich:
    mit wenigen Teilen, dann komplett außerhalb des Gehäuses, erst dann verschrauben.
 8. **Lösbar bauen.** Ans Gehäuse wird geschraubt, nicht geklebt. Geklebt werden nur Druckteile
    untereinander (Schwalbenschwanz-Fugen).
+9. **Echte Daten entscheiden.** Jeder Lauf am Gerät wird roh geloggt und lässt sich nachspielen.
+   Jeder Fehler aus echten Daten wird ein Test, jede Änderung wird gegen alle echten Läufe
+   beziffert (alt / neu / Kontrolle).
 
 ## Phasen
 
@@ -91,8 +95,18 @@ Lies je nach Phase zusätzlich:
 
 ### 8. Software
 - Läuft früh mit Simulator (Tasten statt Sensoren), damit sie nicht auf Hardware wartet.
-- Logging pro Lauf, damit der Agent hinterher auswerten kann. Tests für Erkennung,
-  Parser und Performance-Budgets.
+- Details in `software.md`. Jede Code-Änderung folgt diesem Ablauf (kopieren und abhaken):
+
+```
+Änderung:
+- [ ] Problem am echten Lauf beziffern (Log holen, Replay, Kontrolle)
+- [ ] Kleinste Änderung, die die Ursache trifft
+- [ ] Test, der ohne Fix fehlschlägt; alle Tests grün
+- [ ] Replay aller gespeicherten echten Läufe: nichts schlechter
+- [ ] VERSION + CHANGELOG, PR, mergen, deployen
+- [ ] Auf dem Gerät prüfen: Dienst aktiv, Version, Logs, Daten erhalten
+```
+
 - Öffentliche Repos: nur eigene Sounds, Schriften mit freier Lizenz (OFL), keine Spiel-Assets.
 
 ### 9. Rückschau
@@ -102,6 +116,6 @@ Lies je nach Phase zusätzlich:
 
 - Anleitungen Schritt für Schritt, nummeriert, mit genauen Dateinamen und Einstellungen.
 - Bei Fotos: erst beschreiben, was zu sehen ist, dann die Ursache, dann die kleinste Änderung.
-- Nur committen und pushen, wenn der Nutzer es sagt. Drucken, Bestellen, Mails: nur der Nutzer
+- Nur committen und pushen, wenn der Nutzer es sagt (oder ein freigegebener Release-Ablauf gilt). Drucken, Bestellen, Mails: nur der Nutzer
   bzw. nach Freigabe.
 - In öffentlichen Repos: keine KI-Attribution, wenige Kommentare, schlanker Code.
