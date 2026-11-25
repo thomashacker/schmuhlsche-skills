@@ -3,8 +3,15 @@
 Jede Lehre: was passiert ist, die Regel, warum. Neue Einträge oben in ihrer Gruppe.
 Herkunft in Klammern.
 
+## Inhalt
+Messen und Annahmen · Einkauf · 3D-Druck · CAD und Modell · Elektrik · Software · Zusammenarbeit
+
 ## Messen und Annahmen
 
+- **Selbstgebautes erst sehen, dann modellieren.** Eine Klemmen-Baugruppe wurde zweimal falsch
+  verstanden (liegend statt stehend), ein Kabel mit 13 statt 4 mm angenommen. Regel: Für alles,
+  was der Nutzer zusammengesteckt hat, zuerst ein Foto mit Maßstab; Lage, Öffnungsrichtung und
+  Kabelwege daraus ablesen. Passmaße nie schätzen. (DragonFist)
 - **Datenblatt-Maße sind Annahmen.** Sensorgehäuse laut Datenblatt 8 mm hoch, gemessen 9 mm;
   die Sensoren standen 1 mm über. Regel: Jedes Kaufteil, in das etwas passen muss, vor dem
   Prüfdruck messen und in `parameter.py` als gemessen markieren. (DragonFist)
@@ -32,6 +39,14 @@ Herkunft in Klammern.
 
 ## 3D-Druck
 
+- **Druckbarkeit rechnen, nicht ansehen.** Zwei Teile hätten auf der offenen Seite gestanden bzw.
+  ein freies Dach gehabt. Regel: Für jede STL in Drucklage Auflagefläche und Überhang (> 45°)
+  berechnen; Überhang über wenige cm² heißt Lage oder Form ändern. (DragonFist)
+- **Bewegliche Teile im Schnitt prüfen.** Eine Schubladen-Rastung hätte geklemmt; sichtbar wurde
+  es erst im Schnittbild. Regel: Für alles, was gleitet, rastet oder klappt, den Weg durchspielen
+  und einen Schnitt zeigen. Federn muss das Teil, über das der Gegenpart gleitet. (DragonFist)
+- **Verbrauchsmaterial mitdenken.** Ein Refill ohne passende Spule blockierte den Druck.
+  Regel: Vor einer Druckserie Filamentmenge, Spule und Ersatzteile des Druckers prüfen. (DragonFist)
 - **Runde Löcher in einer frei überbrückten Decke werden zu Gewölle.** Die Taschendecke über
   den Sensoren hatte runde Lochwände in der Luft; das Schraubloch war zu. Regel: Gestufte Löcher
   (1. Schicht Schlitz quer, 2. Schicht Quadrat, darüber rund) und Deckenhöhe auf das
@@ -52,6 +67,19 @@ Herkunft in Klammern.
 
 ## CAD und Modell
 
+- **Werkzeug ist Teil der Geometrie.** Schraubenköpfe saßen tief in engen Rohren; der Bithalter
+  passte nicht hinein. Regel: Pro Schraubstelle den Werkzeugweg (Halter-Ø, Bitlänge) als Körper
+  prüfen; nötiges Spezialwerkzeug früh auf die Einkaufsliste. (DragonFist)
+- **Erreichbare Kanten entschärfen.** Spitze Teile im Bewegungsbereich verletzten mehrere
+  Spieler. Regel: Jede Kante, an die Hände kommen, rund (≥ 2 mm) oder gepolstert; Polster
+  austauschbar (Kaufteil auf gedrucktem Halter). (DragonFist)
+- **Neue Anbauteile gegen alles Bestehende prüfen.** Die Seitenkonsole ragte 2 cm in den schon
+  geplanten Kabelkanal, weil nur gegen den Innenraum geprüft wurde. Regel: Jedes neue Teil im Build
+  gegen den ganzen Rahmen schneiden (Volumen > 0 = `!!`). (DragonFist)
+- **Schrauben von innen brauchen freien Innenraum.** Die Wandschrauben der Seitenkonsole saßen
+  hinter Schwimmnudel, Sensorplatte und Alu-Pfosten, das Display-Kästchen hätte vorne keine
+  einzige freie Stelle gehabt. Regel: Schraubstellen im Build automatisch suchen (Inhalt +
+  Schrauber-Radius 10 mm), lange Kästchen vorne abstützen (Stifte zum Nachbarteil). (DragonFist)
 - **Kabel nicht als Dekoration.** Erste Kabel liefen durch den Schlagbereich und ineinander.
   Regel: Adern mit echten Wegen routen, Kollisionen prüfen lassen, Kabellängen prüfen.
   (DragonFist)
@@ -60,6 +88,11 @@ Herkunft in Klammern.
 
 ## Elektrik
 
+- **Transportfest statt tischfest.** Nach einer Fahrt hatten Steckbrett und USB-Stecker
+  Wackelkontakt. Regel: Im fertigen Gerät keine Steckbretter; Stecker gegen Herausrutschen
+  sichern; nach dem Einbau ein Schütteltest mit Live-Monitor. (DragonFist)
+- **Stecker wartbar einbauen.** Ein loser Stecker war nur durch komplettes Zerlegen erreichbar.
+  Regel: Jede Steckverbindung von außen oder über eine Klappe erreichbar. (DragonFist)
 - **Eine Ader pro Klemmen-Einlass.** Elko-Bein und Kabel steckten zusammen in einem Wago-Einlass;
   das hält nicht sicher. Regel: Jede Ader bekommt ihren eigenen Einlass, notfalls die 5er-Wago.
   (DragonFist)
@@ -76,6 +109,15 @@ Herkunft in Klammern.
 
 ## Software
 
+- **Jeder angezeigte Wert braucht eine Gültigkeitsbedingung.** Die Höchstgeschwindigkeit war ein
+  Artefakt überlappender Bewegungen. Regel: Für jede berechnete Größe festlegen, wann sie
+  messbar ist; sonst „–“ statt Zahl. Mit echten Läufen belegen (Anteil gültig, Verteilung,
+  Ausreißer) und als Test festschreiben. Ranglisten nur aus robusten Werten (nicht Einzelmaximum).
+  (DragonFist)
+- **Nur Gleiches vergleichen.** Läufe mit verschiedenen Einstellungen standen in einer Liste.
+  Regel: Ranglisten je Einstellung, pro Person der beste Eintrag. (DragonFist)
+- **Gerät meldet fehlende Hardware selbst.** Ein ausgefallener Lautsprecher fiel erst per SSH
+  auf. Regel: Erwartete Geräte als Liste; die App zeigt, was fehlt. (DragonFist)
 - **Gefühl „zählt falsch“ war richtig.** 99 statt 93 Schläge, weil ein Schlag durch zwei
   benachbarte hintere Strahlen in zwei Fäuste zerfiel. Regel: Rohdaten nachspielen, gegen eine
   unabhängige Zählung beziffern, den Lauf als Regressionstest speichern. (DragonFist)
@@ -87,7 +129,8 @@ Herkunft in Klammern.
   (`grep`) und abfangen, ein Test pro Verbraucher. (DragonFist)
 - **`readline()` mit Timeout liefert halbe Zeilen.** Regel: seriellen Eingang puffern, bis die
   Zeile komplett ist. (DragonFist)
-- **Highscores können bei Stromausfall verloren gehen.** Regel: dauerhafte Dateien atomar
+- **Dateien nie direkt überschreiben.** Highscores und einmal eine Quelldatei (Skriptfehler beim
+  Schreiben) gingen fast verloren. Regel: dauerhafte Dateien atomar
   schreiben (`.tmp` + `os.replace`). (DragonFist)
 - **Zu grobe Korrektur.** Eine erste Regel gegen falsche Tempi hätte 40 % aller Messwerte
   gelöscht. Regel: Jede Regel gegen alle echten Läufe mit „Anteil mit Messwert“ und Median
@@ -98,6 +141,13 @@ Herkunft in Klammern.
 
 ## Zusammenarbeit
 
+- **Nur geprüfte Links.** Mehrere Kauf-Links führten ins Leere oder lieferten zu spät. Regel:
+  Link selbst öffnen, Artikel, Größe, Preis und Lieferdatum bestätigen, dann schicken. (DragonFist)
+- **Erklären deckt Fehler auf.** Beim Erklären eines Mechanismus fiel ein Konstruktionsfehler auf.
+  Regel: Zu jedem neuen Mechanismus ungefragt Bild und Schnitt mit kurzer Funktionsbeschreibung.
+  (DragonFist)
+- **Spracheingabe deuten.** Diktierte Fachwörter kommen verfremdet an. Regel: Aus dem Kontext
+  deuten und mit dem richtigen Begriff zurückspiegeln. (DragonFist)
 - **Backup vor Experimenten.** Der Nutzer wollte Änderungen ausprobieren, ohne die gute Version
   zu verlieren. Regel: Vor größeren Umbauten committen. (DragonFist)
 - **Optik früh zeigen.** Der Nutzer entscheidet viel über Bilder (Blender, Viewer, 2D-Pläne).

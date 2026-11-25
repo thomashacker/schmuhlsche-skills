@@ -30,11 +30,15 @@
 - **Schrauben ins Druckteil:** Holzschrauben 2,5 mm in 2,2-mm-Löcher schneiden selbst Gewinde.
 - **Kleine Löcher** unter 3 mm werden unsauber; optische Kanäle lieber an die Grenze legen.
 - **Gravur:** 0,8 mm tief, Teil kopfüber, Farbwechsel per Pause. Ergibt saubere Zweifarbigkeit.
+- **Bewegliche Teile:** Rastungen über eine federnde Zunge (Länge ≥ 15 × Dicke, 1–1,5 mm
+  Überdeckung) am Teil, über das der Gegenpart gleitet; Nocken gerundet, damit es in beide
+  Richtungen geht. Weg im Schnitt prüfen.
 - **Hitze:** PLA wird ab ca. 50–60 °C weich. Wärmequellen (Netzteile, Spannungsregler) prüfen;
   ein Pico bleibt deutlich darunter.
 
 ## Ablauf pro Druck
 
+0. Filamentmenge und Spule prüfen (Refill braucht eine Spule; Rest wiegen).
 1. Datei laden, Teileliste und Höhe prüfen.
 2. Einstellungen wie oben, Pausen setzen.
 3. Slicen, Gramm und Zeit notieren, mit der Schätzung vergleichen.

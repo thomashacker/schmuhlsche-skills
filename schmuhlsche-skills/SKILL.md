@@ -12,6 +12,7 @@ Lies je nach Phase zusätzlich:
 - `lehren.md` – falsche Annahmen aus früheren Projekten, als Regeln. **Vor jeder Phase überfliegen.**
 - `geruest.md` – Aufbau des Projekt-Repos (parameter.py, build.py, Prüfungen, Inventur).
 - `druck.md` – FDM-Konstruktion und Bambu-A1-Praxis.
+- `bauen.md` – Montage: Reihenfolge, Zugang, Dome, Schrauben in Druckteil und Holz, Checkliste.
 - `elektrik.md` – Strom, Masse, Klemmen, Verkabelungs-Anleitungen.
 - `stil.md` – Look und Flair (Farben, Gravur, Schriften, Oberflächen).
 - `software.md` – Logs, Replay, Sensor-Logik, Tests, Code-Audit, Release aufs Gerät.
@@ -40,6 +41,8 @@ Lies je nach Phase zusätzlich:
 9. **Echte Daten entscheiden.** Jeder Lauf am Gerät wird roh geloggt und lässt sich nachspielen.
    Jeder Fehler aus echten Daten wird ein Test, jede Änderung wird gegen alle echten Läufe
    beziffert (alt / neu / Kontrolle).
+10. **Für Menschen und Transport bauen.** Was angefasst, getragen oder gerüttelt wird, hat
+    keine scharfen Kanten, keine losen Stecker und meldet fehlende Hardware selbst.
 
 ## Phasen
 
@@ -75,6 +78,8 @@ Lies je nach Phase zusätzlich:
 - Ansichten für den Menschen: Blender-Collections pro Baustufe, Browser-Viewer, 2D-Bohrpläne
   mit Maßen. Der Nutzer will jede Ebene verstehen, nicht nur das Ergebnis sehen.
 - Vor größeren Umbauten committen (oder Backup), damit die funktionierende Version bleibt.
+- Bevor Löcher gesetzt werden: Montage-Reihenfolge und Schraubrichtung festlegen, Schraubstellen
+  im Build gegen Inhalt und Schrauberseite prüfen lassen (`bauen.md`).
 
 ### 5. Prüfdruck
 - Prüfstücke in Phasen ordnen, je Stück eine Prüffrage und die erwarteten Antworten
