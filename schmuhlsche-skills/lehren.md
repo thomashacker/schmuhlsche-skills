@@ -67,6 +67,11 @@ Messen und Annahmen · Einkauf · 3D-Druck · CAD und Modell · Elektrik · Soft
 
 ## CAD und Modell
 
+- **Kabel brauchen Raum, nicht nur einen Weg.** Die Technikbox war voll mit Steckern,
+  Knickschutz und Überlängen; Kabel mussten gestopft werden, Stecker rutschten heraus.
+  Regel: Jedes Kabel als Körper planen: Stecker mit Knickschutz, Biegeradius (≥ 5 × Ø),
+  Überlänge als Schlaufe mit Platz; Kabelvolumen gegen den freien Raum prüfen, 50 % Reserve.
+  Lieber kurze, passende Kabel und Winkelstecker kaufen als lange aufrollen. (DragonFist)
 - **Werkzeug ist Teil der Geometrie.** Schraubenköpfe saßen tief in engen Rohren; der Bithalter
   passte nicht hinein. Regel: Pro Schraubstelle den Werkzeugweg (Halter-Ø, Bitlänge) als Körper
   prüfen; nötiges Spezialwerkzeug früh auf die Einkaufsliste. (DragonFist)

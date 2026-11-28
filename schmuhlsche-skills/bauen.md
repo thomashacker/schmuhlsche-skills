@@ -27,6 +27,9 @@ eigenen Funden. Zahlen sind Startwerte: per Prüfstück auf dem eigenen Drucker 
   geben die Lage vor. Teile, die gleich aussehen, aber verschieden sind, vermeiden.
 - **Servicezugang.** Was getauscht oder verkabelt wird (Rechner, Netzteil, Stecker), muss ohne
   Zerlegen des Rests erreichbar sein.
+- **Kabel einplanen.** Pro Stecker die Steckerlänge plus Knickschutz plus Biegeradius frei
+  halten; Überlängen bekommen einen Platz (Schlaufe, Clip). Stecker, die man nachstecken muss,
+  von außen erreichbar machen (kurze Verlängerung an eine Servicestelle).
 - **Transport und Menschen.** Das Gerät wird getragen, gerüttelt und angefasst: Stecker sichern,
   keine Steckbretter, erreichbare Kanten rund oder gepolstert, Schütteltest vor dem Einsatz.
 - **Last tragen, nicht nur halten.** Lange Hebel (Kästchen, das weit absteht) brauchen Auflage
@@ -91,6 +94,7 @@ Montage:
 - [ ] Jedes Teil passt aufs Druckbett und druckt ohne Stützen (Prüfung im Build)
 - [ ] Bewegliche Teile im Schnitt geprüft
 - [ ] Erreichbare Kanten rund oder gepolstert, Stecker gesichert
+- [ ] Kabel als Körper geplant: Stecker, Biegeradius, Überlänge, 50 % Reserve im Raum
 ```
 
 Quellen (für Nachschlagen): Prusa Knowledge Base „Modeling with 3D printing in mind“; Hersteller-
